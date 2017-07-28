@@ -3,17 +3,22 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
 public class Calculando{
 
+	static JTextPane teste = new JTextPane();
 	
 	public static void main (String [] args) {
 		
@@ -60,7 +65,47 @@ public class Calculando{
 		btn7.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		btn7.setFont(new Font("Calibri", Font.BOLD, 10));
 		fJanela.add(btn7).setBounds(10, 170, 48, 35);
+		btn7.setText("7");
+		btn7.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				btn7.doClick();
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			
 		
+		
+		 private void btn7mouseClicked(MouseAdapter arg0) {                                    
+		        String valor = teste.getText();
+		       teste.setText(valor + "7");
+		    }  
+	});
 		
 		JButton btn8 = new JButton("8");
 		btn8.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
